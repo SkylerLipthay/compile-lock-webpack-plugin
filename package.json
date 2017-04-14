@@ -1,0 +1,20 @@
+{
+  "name": "compile-lock-webpack-plugin",
+  "version": "1.0.0",
+  "description": "Maintain a lock file during Webpack compilation",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SkylerLipthay/compile-lock-webpack-plugin.git"
+  },
+  "keywords": [
+    "webpack",
+    "plugin",
+    "compile",
+    "lock",
+    "file"
+  ],
+  "author": "Skyler Lipthay",
+  "license": "MIT",
+  "homepage": "https://github.com/SkylerLipthay/compile-lock-webpack-plugin"
+}
