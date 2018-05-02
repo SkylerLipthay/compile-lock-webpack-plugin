@@ -16,5 +16,8 @@
   ],
   "author": "Skyler Lipthay",
   "license": "MIT",
-  "homepage": "https://github.com/SkylerLipthay/compile-lock-webpack-plugin"
+  "homepage": "https://github.com/SkylerLipthay/compile-lock-webpack-plugin",
+  "dependencies": {
+    "fs-extra": "^6.0.0"
+  }
 }

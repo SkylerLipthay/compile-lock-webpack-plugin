@@ -1,22 +1,24 @@
-const fs = require('fs');
+const fs = require('fs-extra');
+const path = require('path');
 
-function CompileLockPlugin(path) {
-  if (!path) {
+function CompileLockPlugin(filePath) {
+  if (!filePath) {
     throw 'Lock file path must be specified';
   }
 
-  this.path = path;
+  this.filePath = filePath;
 }
 
 CompileLockPlugin.prototype.apply = function(compiler) {
-  var path = this.path;
+  var filePath = this.filePath;
 
   compiler.plugin('compile', function(params) {
-    fs.closeSync(fs.openSync(path, 'w'));
+    fs.ensureDirSync(path.dirname(filePath));
+    fs.closeSync(fs.openSync(filePath, 'w'));
   });
 
   compiler.plugin('after-emit', function(compilation, callback) {
-    fs.unlinkSync(path);
+    fs.unlinkSync(filePath);
     callback();
   });
 };
